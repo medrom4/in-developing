@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #1C1C1C;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+/*******************
+********TOP*********
+********************/
+div#container-all {
+    max-width: 1600px;
+}
+
+div#hght-1100 {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+div.top {
+    height: 90px;
+}
+
+div.top div.site {
+    width: 50%;
+    float: left;
+    font-size: 24px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+}
+
+div.top div.telefon {
+    text-align: right;
+    width: 50%;
+    float: left;
+    position: relative;
+}
+
+div.top div.telefon div {
+    transform: translateY(+50%);
+}
+
+div.top div.telefon .call {
+    font-size: 24px;
+}
+
+div.top div.telefon .call span.one-num {
+    color: #B7B7B7;
+}
+
+div.top div.telefon .call span.two-num {
+    font-weight: normal;
+}
+
+div.top div.telefon .mess {
+    font-size: 12px;
+    color: #727272;
+}
+
+/*******************
+********VENECC******
+********************/
+div.venecc {
+    background: url('../img/venecc.jpg') no-repeat;
+    background-size: cover;
+    height: 585px;
+    position: absolute;
+    margin: 0px -242px;
+    width: 100%;
+    box-shadow: 0 0 0 400px rgba(0, 0, 0, 0.73) inset;
+    /* filter: grayscale(100%); */
+}
+
+div.fon-img {
+    width: 60%;
+    background: rgba(40,162,110, 0.8);
+    background-image: repeating-linear-gradient(135deg, hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, .1) 5px, transparent 0, transparent 7px);
+    5px, transparent 0, transparent 7px);
+    position: absolute;
+    height: 100%;
+}
+
+div.venecc .lefts {
+    transform: translateY(+50%);
+}
+
+div.venecc .lefts h4,
+div.venecc .lefts p {
+    color: #fff;
+}
+
+div.statt-all {
+    float: left;
+}
+
+div.top-two {
+    padding: 0px 180px 0px 240px;
+    z-index: 3;
+}
+
+div.statt {
+    margin-left: 240px;
+    width: 75%;
+    z-index: 3;
+}
+
+hr {
+    border: none;
+    background-color: #42A47A;
+    color: #42A47A;
+    height: 1px;
+    margin: 20px 0px 10px 240px;
+}
+
+div.statt p {
+    font-size: 16px;
+}
+
+div.statt .statt-all p.p-all-statt {
+    line-height: 20px;
+}
+
+div.statt p.numer {
+    font-size: 64px;
+}
+
+div.venecc .lefts h4 {
+    font-size: 50px;
+    font-weight: normal;
+}
+
+div.venecc .lefts onezapp {
+    font-size: 20px;
+}
+
+div.venecc .lefts twozapp {
+    font-size: 14px;
+}
+
+div.venecc .lefts {
+    float: left;
+}
+
+.statt {
+    width: 100%;
+}
+
+div.statt .statt-all-1,
+div.statt .statt-all-2,
+div.statt .statt-all-3 {
+    width: 30.333%
+}
+
+div.venecc .rights {
+    float: left;
+    width: 40%;
+}
