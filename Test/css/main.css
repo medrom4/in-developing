@@ -62,19 +62,18 @@ div.top div.telefon .mess {
 ********VENECC******
 ********************/
 div.venecc {
+    position: relative;
     background: url('../img/venecc.jpg') no-repeat;
     background-size: cover;
     height: 585px;
-    position: absolute;
-    margin: 0px -242px;
-    width: 100%;
+    margin: 0px -243px;
+    width: 144%;
     box-shadow: 0 0 0 400px rgba(0, 0, 0, 0.73) inset;
-    /* filter: grayscale(100%); */
 }
 
 div.fon-img {
     width: 60%;
-    background: rgba(40,162,110, 0.8);
+    background: rgba(40, 162, 110, 0.8);
     background-image: repeating-linear-gradient(135deg, hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, .1) 5px, transparent 0, transparent 7px);
     5px, transparent 0, transparent 7px);
     position: absolute;
@@ -86,7 +85,11 @@ div.venecc .lefts {
 }
 
 div.venecc .lefts h4,
-div.venecc .lefts p {
+div.venecc .lefts p,
+p.zapusk-p-one,
+p.mart,
+p.times-click,
+div.times div div p {
     color: #fff;
 }
 
@@ -125,7 +128,8 @@ div.statt p.numer {
     font-size: 64px;
 }
 
-div.venecc .lefts h4 {
+div.venecc .lefts h4,
+p.mart {
     font-size: 50px;
     font-weight: normal;
 }
@@ -134,12 +138,18 @@ div.venecc .lefts onezapp {
     font-size: 20px;
 }
 
-div.venecc .lefts twozapp {
+div.venecc .lefts twozapp,
+div.times div div p {
     font-size: 14px;
 }
 
-div.venecc .lefts {
+div.venecc .lefts,
+div.raceta {
     float: left;
+}
+
+div.raceta {
+    margin-right: 15px;
 }
 
 .statt {
@@ -153,6 +163,79 @@ div.statt .statt-all-3 {
 }
 
 div.venecc .rights {
-    float: left;
+    float: right;
     width: 40%;
+}
+
+div.black-fff {
+    /* filter: grayscale(100%); */
+}
+
+p.zapusk-p-one,
+p.times-click {
+    font-size: 18px;
+}
+
+div.block-info {
+    padding-left: 60px;
+    padding-top: 100px;
+}
+
+div.block-times-1,
+div.block-times-2,
+div.block-times-3 {
+    float: left;
+    margin-right: 10px;
+}
+
+div.times p.times-click {
+    margin-bottom: 10px;
+}
+
+div.block-times-4 {
+    display: inline-block;
+}
+
+div.block-times-1 p,
+div.block-times-2 p,
+div.block-times-3 p,
+div.block-times-4 p {
+    text-align: center;
+}
+
+button.times-clock-off {
+    margin-top: 40px;
+    width: 355px;
+    height: 50px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    background: #fff;
+}
+
+/********************
+*****% АКЦИЯ******
+********************/
+div.registration div.text-block {
+    margin-left: 235px;
+    margin-top: 50px;
+}
+
+div.registration div.text-block h5 {
+    font-size: 36px;
+    color: rgb(28, 28, 28);
+}
+
+div.registration p {
+    font-size: 14px;
+}
+
+button.button-block-two {
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(171, 175, 171);
+}
+
+div.text-block span {
+    color: #FC8153;
 }
