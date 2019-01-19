@@ -1,14 +1,24 @@
 function showMessage() {
-	var a = [1, 2, 3];
-	var otvet = a.reverse().join("-");
+	var a = ['ant', 'But', 'cat', 'Dog'];
+	a.sort();
+	var otvet = a.sort(function (s, t) {
+		var a = s.toLowerCase();
+		var b = t.toLowerCase();
+		if (a < b) return -1;
+		if (a > b) return 1;
+		return 0
+	});
 
 
-	console.log(' Ваш ответ = ' + otvet);
+	console.log('Ваш ответ = ' + otvet);
 }
 
 showMessage();
 
 
+
+
+//a.toLowerCase() - в нижний регистр
 //**************
 //***МАССИВЫ****
 //**************
@@ -20,3 +30,32 @@ showMessage();
 //a.forEach() - берем каждый элемент массива
 //a.join() - преобразует все элементы массива в строки, объединяет их и возвращает строку
 //a.reverse() - меняет порядок следования элементов в массиве на обратный
+//a.sort() - сортирует элементы в исходном массиве и возвращает отсортированный массив
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
