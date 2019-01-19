@@ -1,19 +1,21 @@
 function showMessage() {
-	var a = ['ant', 'But', 'cat', 'Dog'];
-	a.sort();
-	var otvet = a.sort(function (s, t) {
-		var a = s.toLowerCase();
-		var b = t.toLowerCase();
-		if (a < b) return -1;
-		if (a > b) return 1;
-		return 0
-	});
-
-
-	console.log('Ваш ответ = ' + otvet);
+	var stack = [];
+	stack.push(1,2);
+	stack.pop();
+	stack.push(3);
+	stack.pop();
+	stack.push([4,5]);
+	stack.pop();
+	stack.pop();
+	
+	var otvet = stack;
+	console.log(otvet);
 }
 
 showMessage();
+
+
+
 
 
 
@@ -31,11 +33,11 @@ showMessage();
 //a.join() - преобразует все элементы массива в строки, объединяет их и возвращает строку
 //a.reverse() - меняет порядок следования элементов в массиве на обратный
 //a.sort() - сортирует элементы в исходном массиве и возвращает отсортированный массив
-//
-//
-//
-//
-//
+//a.concat() - возвращает новый массив, содержащий элементы исходного массива
+//a.slice() - возвращает фрагмент, или подмассив, указанного массива
+//a.splice() - удаляет элементы из массива, вставляет или выполняет обе операции одновременно
+//a.push() - добавляет один или несколько новых элементов в конец массива
+//a.pop() - удаляет последний элемент массива
 //
 //
 //
