@@ -1,12 +1,18 @@
 function showMessage() {
-	a = [0, 1, 2, 1, 34];
+    var a = {
+        "0": "a",
+        "1": "b",
+        "2": "c",
+        length: 3
+    };
 
-	var otvet = a.indexOf(34);
-	var b = a.lastIndexOf(1);
-	var c = a.lastIndexOf(34);
-	var d = a.indexOf(12);
-	
-	console.log(otvet + ', ' + b + ', ' + c + ', ' + d);
+    var otvet1 = Array.prototype.join.call(a, "+");
+    var otvet2 = Array.prototype.slice.call(a, 0);
+    var otvet3 = Array.prototype.map.call(a, function(x){
+		return	x.toUpperCase();
+	});
+
+    console.log(otvet1 + '\n\n' + otvet2 + '\n\n' + otvet3);
 }
 
 showMessage();
@@ -45,7 +51,7 @@ showMessage();
 //a.reduce() - объединяют элементы массива, используя указанную вами функцию, и возвращают единственное значение
 //a.educeRight() - тоже самое, только в обратном порядке
 //a.indexOf() - выполняет поиск от начала массива к концу
-//a.lastIndexOf() - выполняет поиск от конца массива к началу 
+//a.lastIndexOf() - выполняет поиск от конца массива к началу
 //
 //
 //
