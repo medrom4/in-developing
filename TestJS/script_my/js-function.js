@@ -1,10 +1,12 @@
-function f(x, y, z) {
-	if (arguments.length != 3) {
-		throw new Error("функция f вызвана с " + arguments.length + " аргументами, а требуется 3, исправьте! ");
-	}
+function f(x) {
+	console.log(x);
+	arguments[0] = null;
+	console.log(x);
 }
 
-f(2, 2, 3, 4)
+f(12);
+
+
 
 
 //call() - методы, выполняющий косвенный вызов функции
