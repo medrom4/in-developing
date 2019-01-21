@@ -1,14 +1,11 @@
-var o = {
-	m: function () {
-		var self = this;
-		console.log(this === o);
-		f();
-		
-		function f() {
-			console.log(this === o);
-			console.log(self === o);
-		}
+function f(x, y, z) {
+	if (arguments.length != 3) {
+		throw new Error("функция f вызвана с " + arguments.length + " аргументами, а требуется 3, исправьте! ");
 	}
-};
+}
 
-o.m();
+f(2, 2, 3, 4)
+
+
+//call() - методы, выполняющий косвенный вызов функции
+//apply() - методы, выполняющий косвенный вызов функции
