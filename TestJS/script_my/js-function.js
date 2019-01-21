@@ -1,11 +1,8 @@
-function f(x) {
-	console.log(x);
-	arguments[0] = null;
-	console.log(x);
+uniqueInteger.counter = 0;
+
+function uniqueInteger() {
+	return uniqueInteger.counter++;
 }
-
-f(12);
-
 
 
 
