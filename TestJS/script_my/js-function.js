@@ -1,9 +1,14 @@
-function showMessage() {
-    var mozg = (function(x) {
-        return x * x;
-    }(10));
-
-    console.log(mozg);
+var o = {
+	m: function () {
+		var self = this;
+		console.log(this === o);
+		f();
+		
+		function f() {
+			console.log(this === o);
+			console.log(self === o);
+		}
+	}
 };
 
-showMessage();
+o.m();
