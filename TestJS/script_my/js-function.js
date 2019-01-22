@@ -1,28 +1,14 @@
-function addPrivateProperty(o, name, predicate) {
-	var value;
-	o["get" + name] = function () {
-		return value;
-	};
-
-	o["set" + name] = function (v) {
-		if (predicate && !predicate(v))
-			throw Error("set" + name + ": недопустимое значение: " + v);
-		else
-			value = v;
-	};
-
+function check(args) {
+	var actual = args.length;
+	var expected = args.callee.length;
+	if (actual !== expected)
+		throw new Error("ожидается: " + expected + "; получено: " + actual);
 }
 
-var o = {};
-
-addPrivateProperty(o, "Name", function (x) {
-	return typeof x == "string";
-});
-
-o.setName("Frank");
-console.log(o.getName());
-o.setName(1);
-console.log(o.getName());
+function f(x, y, z) {
+	check(arguments);
+	return x + y + z;
+}
 
 
 //call() - методы, выполняющий косвенный вызов функции
