@@ -1,25 +1,28 @@
-function counter(n) {
-	return {
-		get count() {
-			return n++;
-		},
-		set count(m) {
-			if (m >= n) n = m;
-			else throw Error('Значение счетчика нельзя уменьшить! ');
-		}
-	}
+function addPrivateProperty(o, name, predicate) {
+	var value;
+	o["get" + name] = function () {
+		return value;
+	};
+
+	o["set" + name] = function (v) {
+		if (predicate && !predicate(v))
+			throw Error("set" + name + ": недопустимое значение: " + v);
+		else
+			value = v;
+	};
+
 }
 
-var c = counter(1000);
-console.log(c.count);
-console.log(c.count);
+var o = {};
 
-c.count = 2000;
-console.log(c.count);
+addPrivateProperty(o, "Name", function (x) {
+	return typeof x == "string";
+});
 
-c.count = 2000;
-console.log(c.count); //ошибка!
-
+o.setName("Frank");
+console.log(o.getName());
+o.setName(1);
+console.log(o.getName());
 
 
 //call() - методы, выполняющий косвенный вызов функции
