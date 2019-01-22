@@ -1,20 +1,24 @@
-var scope = "global scope";
-
-function checkscope() {
-	var scope = "local scope";
-	console.log(scope);
-
-	function f() {
-		return scope;
-		console.log(scope);
+function counter(n) {
+	return {
+		get count() {
+			return n++;
+		},
+		set count(m) {
+			if (m >= n) n = m;
+			else throw Error('Значение счетчика нельзя уменьшить! ');
+		}
 	}
-
-	return f();
 }
 
-checkscope();
+var c = counter(1000);
+console.log(c.count);
+console.log(c.count);
 
+c.count = 2000;
+console.log(c.count);
 
+c.count = 2000;
+console.log(c.count); //ошибка!
 
 
 
