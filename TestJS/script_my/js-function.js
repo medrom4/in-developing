@@ -10,14 +10,12 @@ function inherit(p) {
 	return new f();
 }
 
-function range(from, to) {
-	var r = inherit(range.methods);
-	r.from = from;
-	r.to = to;
-	return r;
+function Range(from, to) {
+	this.from = from;
+	this.to = to;
 }
 
-range.methods = {
+Range.prototype = {
 	includes: function (x) {
 		return this.from <= x && x <= this.to;
 	},
@@ -25,15 +23,18 @@ range.methods = {
 	foreach: function (f) {
 		for (var x = Math.ceil(this.from); x <= this.to; x++) f(x);
 	},
+
 	toString: function () {
 		return "(" + this.from + "..." + this.to + ")";
 	}
-};
+}
 
-var r = range(1, 3);
+var r = new Range(1,3);
+var otvet1 = r.includes(2);
+console.log(otvet1);
 
-console.log(r.includes(2));
 r.foreach(console.log);
+
 console.log(r);
 
 
