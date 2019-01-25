@@ -1,21 +1,19 @@
-var sum = function (x, y) {
-	return x + y
-};
-var succ = sum.bind(null, 1);
-succ(2)
+var data = [1, 1, 3, 5, 5];
+var total = 0;
 
-console.log(succ(2));
+for (i = 0; i < data.length; i++)
+	total += data[i];
 
-function f(y, z) {
-	return this.x + y + z
-};
+var mean = total / data.length;
 
-var g = f.bind({
-	x: 1
-}, 2);
-g(3)
+total = 0;
+for(var i = 0; i < data.length; i++) {
+	var deviation = data[i] - mean;
+	total += deviation * deviation;
+}
 
-console.log(g(3));
+var stddev = Math.sqrt(total/(data.length - 1));
+console.log(stddev);
 
 
 //a.call() - методы, выполняющий косвенный вызов функции
