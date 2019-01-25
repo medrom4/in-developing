@@ -1,13 +1,40 @@
-function memoize(f) {
-    var cache = {};
-    return function() {
-        var key = arguments.length + Array.prototype.join.call(arguments, ",");
-        if (key in cache) return cache[key];
-        else return cache[key] = f.apply(this, arguments);
-    };
+function inherit(p) {
+	if (p == null) throw TypeError();
+	if (Object.create)
+		return Object.create(p);
+	var t = typeof p;
+	if (t !== "object" && t !== "function") throw TypeError();
+
+	function f() {};
+	f.prototype = p;
+	return new f();
 }
 
-console.log(array(2, 3));
+function range(from, to) {
+	var r = inherit(range.methods);
+	r.from = from;
+	r.to = to;
+	return r;
+}
+
+range.methods = {
+	includes: function (x) {
+		return this.from <= x && x <= this.to;
+	},
+
+	foreach: function (f) {
+		for (var x = Math.ceil(this.from); x <= this.to; x++) f(x);
+	},
+	toString: function () {
+		return "(" + this.from + "..." + this.to + ")";
+	}
+};
+
+var r = range(1, 3);
+
+console.log(r.includes(2));
+r.foreach(console.log);
+console.log(r);
 
 
 //a.call() - методы, выполняющий косвенный вызов функции
