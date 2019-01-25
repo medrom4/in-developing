@@ -1,16 +1,13 @@
-function compose(f, g) {
+function memoize(f) {
+    var cache = {};
     return function() {
-        return f.call(this, g.apply(this, arguments));
+        var key = arguments.length + Array.prototype.join.call(arguments, ",");
+        if (key in cache) return cache[key];
+        else return cache[key] = f.apply(this, arguments);
     };
 }
 
-var square = function(x) {
-    return x * x;};
-var sum = function(x, y) {
-    return x + y;
-};
-var squareofsum = compose(square, sum);
-console.log(squareofsum(2, 3));
+console.log(array(2, 3));
 
 
 //a.call() - методы, выполняющий косвенный вызов функции
