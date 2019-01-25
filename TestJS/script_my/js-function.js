@@ -1,19 +1,16 @@
-var data = [1, 1, 3, 5, 5];
-var total = 0;
-
-for (i = 0; i < data.length; i++)
-	total += data[i];
-
-var mean = total / data.length;
-
-total = 0;
-for(var i = 0; i < data.length; i++) {
-	var deviation = data[i] - mean;
-	total += deviation * deviation;
+function compose(f, g) {
+    return function() {
+        return f.call(this, g.apply(this, arguments));
+    };
 }
 
-var stddev = Math.sqrt(total/(data.length - 1));
-console.log(stddev);
+var square = function(x) {
+    return x * x;};
+var sum = function(x, y) {
+    return x + y;
+};
+var squareofsum = compose(square, sum);
+console.log(squareofsum(2, 3));
 
 
 //a.call() - методы, выполняющий косвенный вызов функции
