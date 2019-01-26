@@ -1,26 +1,24 @@
-function type(o) {
-    var t, c, n;
-    if (o === null) return "null";
-    if (o !== o) return "nan";
-    if ((t = typeof o) !== "object") return t;
-    if ((c = classof(o)) !== "Object") return c;
-    if (o.constructor && typeof o.constructor === "function" &&
-    (n = o.constructor.getName())) return n;
-    return "Object";
+function quacks(o) {
+    for (var i = 1; i < arguments.length; i++) {
+        var arg = arguments[i];
+        switch (typeof arg) {
+            case 'string':
+                if (typeof o[arg] !== "function") return false;
+                continue;
+            case 'function':
+                arg = arg.prototype;
+            case 'object':
+                for (var m in arg) {
+                    if (typeof arg[m] !== "function") continue;
+                    if (typeof o[m] !== "function") return false;
+                }
+        }
+    }
+    
+    return true;
+    
 }
 
-function classof(o) {
-    return Object.prototype.toString.call(o).slice(8,-1);
-};
-
-Function.prototype.getName = function() {
-    if ("name" in this) return this.name;
-    return this.name = this.toString().match(/function\s*([^(]*)\(/)[1];
-};
-
-
-
-
-//a.call() - методы, выполняющий косвенный вызов функции
-//a.apply() - методы, выполняющий косвенный вызов функции
-//a.bind() - связать (bind) функцию с объектом
+    //a.call() - методы, выполняющий косвенный вызов функции
+    //a.apply() - методы, выполняющий косвенный вызов функции
+    //a.bind() - связать (bind) функцию с объектом
