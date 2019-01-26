@@ -1,29 +1,24 @@
-function range(from, to) {
-    var r = inherit(range.methods);
-    r.from = from;
-    r.to = to;
-    return r;
+function type(o) {
+    var t, c, n;
+    if (o === null) return "null";
+    if (o !== o) return "nan";
+    if ((t = typeof o) !== "object") return t;
+    if ((c = classof(o)) !== "Object") return c;
+    if (o.constructor && typeof o.constructor === "function" &&
+    (n = o.constructor.getName())) return n;
+    return "Object";
 }
 
-range.methods = {
-    includes: function(x) {
-        return this.from <= x && x <= this.to;
-    },
-    foreach: function(f) {
-        for (var x = Math.ceil(this.from); x <= this.to; x++) f(x);
-    },
-    toString: function() {
-        return "(" + this.from + "..." + this.to + ")";
-    }
+function classof(o) {
+    return Object.prototype.toString.call(o).slice(8,-1);
+};
+
+Function.prototype.getName = function() {
+    if ("name" in this) return this.name;
+    return this.name = this.toString().match(/function\s*([^(]*)\(/)[1];
 };
 
 
-var r = range(1, 3);
-r.includes(2);
-r.foreach(console.log);
-console.log(r);
-
-range.methods.isPrototypeOf(r);
 
 
 //a.call() - методы, выполняющий косвенный вызов функции
