@@ -1,10 +1,15 @@
-var F = function() {}; // Это объект функции.
-var p = F.prototype; // Это объект- прототип, связанный с ней.
-var c = p.constructor; // Это функция, связанная с прототипом.
+String.prototype.trim = String.prototype.trim || function() {
+    if (!this) returnthis;
+    return this.replace(/^\s+|\s+$/g, "");
+};
 
-var otvet = c === F // => true: F.prototype.constructor === F для всех функций
+Function.prototype.getName = function() {
+    return this.name || this.toString().match(/function\s*([^(]*)\(/)[1];
+};
 
-console.log(otvet);
+
+
+
 //a.call() - методы, выполняющий косвенный вызов функции
 //a.apply() - методы, выполняющий косвенный вызов функции
 //a.bind() - связать (bind) функцию с объектом
