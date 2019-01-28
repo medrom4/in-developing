@@ -1,14 +1,10 @@
-var url = /(\w+):\/\/([\w.]+)\/(\S*)/;
-var text = "Посетите мою домашнюю страницу http://www.example.com/~david";
-var result = text.match(url);
-if (result != null) {
-	var fullurl = result[0];
-	var protocol = result[1];
-	var host = result[2];
-	var path = result[3];
+var pattern = /Java/g;
+var text = "JavaScript – это более забавная штука, чем Java!";
+var result;
+while ((result = pattern.exec(text)) != null) {
+	alert("Найдено `" + result[0] + "'" + " в позиции " + result.index + "; следующий поиск начнется с " + pattern.lastIndex);
 }
-
-console.log(fullurl + '\n\n' + protocol + '\n\n' + host + '\n\n' + path);
+//console.log(fullurl + '\n\n' + protocol + '\n\n' + host + '\n\n' + path);
 
 
 
