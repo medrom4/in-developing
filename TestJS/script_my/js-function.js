@@ -1,6 +1,22 @@
-console.log("JavaScript".search(/script/i));
+var url = /(\w+):\/\/([\w.]+)\/(\S*)/;
+var text = "Посетите мою домашнюю страницу http://www.example.com/~david";
+var result = text.match(url);
+if (result != null) {
+	var fullurl = result[0];
+	var protocol = result[1];
+	var host = result[2];
+	var path = result[3];
+}
+
+console.log(fullurl + '\n\n' + protocol + '\n\n' + host + '\n\n' + path);
 
 
+
+//var zipcode = new RegExp("\\d{5}", "g");
+
+
+// .replace() - замена
+// .search() - поиск
 // Классы символов регулярных выражений/////////////
 ////////////////////////////////////////////////////
 //	[...] 	- Любой из символов, указанных в скобках
