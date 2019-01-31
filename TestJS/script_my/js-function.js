@@ -1,15 +1,11 @@
-var pattern = /Java/g;
-var text = "JavaScript – это более забавная штука, чем Java!";
-var result;
-while ((result = pattern.exec(text)) != null) {
-	alert("Найдено `" + result[0] + "'" + " в позиции " + result.index + "; следующий поиск начнется с " + pattern.lastIndex);
-}
-//console.log(fullurl + '\n\n' + protocol + '\n\n' + host + '\n\n' + path);
+let [x, y] = [1, 2]; // То же, что и let x=1, y=2
+[x, y] = [x + 1, y + 1]; // То же, что и x = x + 1, y = y+1
+[x, y] = [y, x];
 
+console.log([x, y]);
 
 
 //var zipcode = new RegExp("\\d{5}", "g");
-
 
 // .replace() - замена
 // .search() - поиск
