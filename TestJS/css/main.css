@@ -3,12 +3,25 @@
 	padding: 0;
 	color: #1C1C1C;
 	font-family: 'Roboto Condensed', sans-serif;
+	
 }
 
-.reveal * {
-	display: none;
+h1 {
+	float: left;
+	margin-right: 20px;
 }
 
-.reveal *.handle {
-	display: block;
+#clock {
+	float: left;
+	/* Стили применяются к элементу с id="clock" */
+	font: bold 24pt sans;
+	/* Использовать большой полужирный шрифт */
+	background: #dda;
+	/* Светлый, голубовато- серый фон */
+	padding: 5px;
+	/* Отступы вокруг */
+	border: solid black 1.5px;
+	/* И сплошная черная рамка */
+	border-radius: 5px;
+	/* Закругленные углы (если поддерживаются) */
 }
