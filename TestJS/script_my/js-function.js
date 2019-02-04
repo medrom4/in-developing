@@ -1,27 +1,28 @@
-try {
-    // здесь могут возбуждаться исключения нескольких типов
-    throw 1;
-}
-catch (e
-    if e instanceof ReferenceError) {
-    // Здесь обрабатывается исключение обращения к неопределенному имени
-}
-catch (e
-    if e === "quit") {
-    // Обработка исключения, получаемое в результате возбуждения сроки "quit"
-}
-catch (e
-    if typeof e === "string") {
-    // Здесь обрабатываются все остальные строковые исключения
-}
-catch (e) {
-    // Здесь обрабатываются любые другие исключения
-}
-finally {
-    // Блок finally действует как обычно
-}
+window.onload = function () {
+	var elements = document.getElementsByClassName('reveal');
+	for (var i = 0; i < elements.length; i++) {
+		var elt = elements[i];
+		var title = elt.getElementsByClassName('handle')[0];
+		addRevealHandler(title, elt);
+	}
+
+	function addRevealHandler(title, elt) {
+		title.onclick = function () {
+			if (elt.className == 'reveal') elt.className = 'revealed';
+			else if (elt.className == 'revealed') elt.className = 'reveal';
+		}
+	}
+};
 
 
+
+
+
+
+
+
+
+//window.location = 'http://ok.ru';
 
 //var zipcode = new RegExp("\\d{5}", "g");
 
