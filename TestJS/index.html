@@ -11,14 +11,17 @@
 
 <body>
 
-	<h1>Цифровые часы</h1>
-		<!-- Вывести заголовок -->
+	<a href='javascript: var e = "", r = ""; do {
+		e = prompt("Выражение: " + e + "\n" + r + "\n", e);
+		try { r = "Результат: " + eval(e); }
+		catch(ex) { r = ex;}
+		} while(e);
+		void 0;
+		'>
+	</a>
 
-	<span id="clock"></span>
-		<!-- Время выводится здесь -->
-
-		<!--    <script src="script_my/js-array.js"></script>-->
-		<script src="script_my/js-function.js"></script>
+	<!--    <script src="script_my/js-array.js"></script>-->
+	<script src="script_my/js-function.js"></script>
 </body>
 
 </html>
