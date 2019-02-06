@@ -1,13 +1,15 @@
-function onLoad(f) {
-    if (onLoad.loaded)
-        window.setTimeout(f, 0);
-    else if (window.addEventListener)
-        window.addEventListener("load", f, false);
-    else if (window.attachEvent)
-        window.attachEvent("onload", f);
-}
-onLoad.loaded = false;
+function invoke(f, start, interval, end) {
+    if (!start) start = 0;
+    if (arguments.length <= 2)
+        setTimeout(f, start);
+    else {
+        setTimeout(repeat, start);
 
-onLoad(function() {
-    onLoad.loaded = true;
-});
+        function repeat() {
+            var h = setInterval(f, interval);
+            if (end) setTimeout(function() {
+                clearInterval(h);
+            }, end);
+        }
+    }
+}
