@@ -1,13 +1,5 @@
-function getElements() {
-    var elements = {};
-    for (var i = 0; i < arguments.length; i++) {
-        var id = arguments[i];
-        var elt = document.getElementById(id);
-        if (elt == null)
-            throw new Error("No element with id: " + id);
-        elements[id] = elt;
-    }
-    console.log(elements);
-}
-
-getElements("a_pro");
+(function () {
+	var a = document.getElementsByTagName("a");
+	for (var i = 0; i < a.length; i++)
+		a[i].style.display = "none";
+})();
