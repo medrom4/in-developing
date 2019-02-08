@@ -1,6 +1,13 @@
-do {
-    var name = prompt('Введите Ваше имя!');
-    var correct = confirm("Вы ввели ' " + name + " '. \n" + "Щелкните ОК, чтобы продолжить, " + "или Отмена, чтобы повторить ввод.")
-} while (!correct)
+function getElements() {
+    var elements = {};
+    for (var i = 0; i < arguments.length; i++) {
+        var id = arguments[i];
+        var elt = document.getElementById(id);
+        if (elt == null)
+            throw new Error("No element with id: " + id);
+        elements[id] = elt;
+    }
+    console.log(elements);
+}
 
-alert("Привет, " + name);
+getElements("a_pro");
