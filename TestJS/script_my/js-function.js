@@ -1,3 +1,5 @@
-var para = document.getElementsByTagName('p')[1];
-var text = para.textContent;
-para.textContent = "Hello World !";
+function reverse(n) {
+	var f = document.createDocumentFragment();
+	while (n.lastChild) f.appendChild(n.lastChild);
+	n.appendChild(f);
+}
