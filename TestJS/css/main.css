@@ -1,27 +1,34 @@
 * {
 	margin: 0;
 	padding: 0;
-	color: #1C1C1C;
+	color: #fff;
 	font-family: 'Roboto Condensed', sans-serif;
-	
 }
 
-h1 {
-	float: left;
-	margin-right: 20px;
+#TOC {
+	border: solid black 1px;
+	margin: 10px;
+	padding: 10px;
 }
 
-#clock {
-	float: left;
-	/* Стили применяются к элементу с id="clock" */
-	font: bold 24pt sans;
-	/* Использовать большой полужирный шрифт */
-	background: #dda;
-	/* Светлый, голубовато- серый фон */
-	padding: 5px;
-	/* Отступы вокруг */
-	border: solid black 1.5px;
-	/* И сплошная черная рамка */
-	border-radius: 5px;
-	/* Закругленные углы (если поддерживаются) */
+.TOCEntry {
+	font-family: sans-serif;
+}
+
+.TOCEntry a {
+	text-decoration: none;
+}
+
+.TOCLevel1 {
+	font-size: 16pt;
+	font-weight: bold;
+}
+
+.TOCLevel2 {
+	font-size: 12pt;
+	margin-left: .5in;
+}
+
+.TOCSectNum:after {
+	content: ": ";
 }
