@@ -1,7 +1,4 @@
-function getViewportSize(w) {
-	w = w || window;
-	if (w.innerWidth != null)
-		console.log('Ширина: ' + w.innerWidth + ', Высота: ' + w.innerHeight);
-}
-
-getViewportSize();
+var methods = document.forms.shipping.elements.method;
+var shipping_method;
+for (var i = 0; i < methods.length; i++)
+	if (methods[i].checked) shipping_method = methods[i].value;
