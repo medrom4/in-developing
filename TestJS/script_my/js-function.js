@@ -1,18 +1,7 @@
-function getScrollOffsets(w) {
+function getViewportSize(w) {
 	w = w || window;
-	if (w.pageXOffset != null)
-		console.log('x: ' + w.pageXOffset + ', y: ' +  w.pageYOffset);
-	
-//	var d = w.document;
-//	if (document.compatMode == "CSS1Compat")
-//		return {
-//			x: d.documentElement.scrollLeft,
-//			y: d.documentElement.scrollTop
-//		};
-//	return {
-//		x: d.body.scrollLeft,
-//		y: d.body.scrollTop
-//	};
+	if (w.innerWidth != null)
+		console.log('Ширина: ' + w.innerWidth + ', Высота: ' + w.innerHeight);
 }
 
-getScrollOffsets();
+getViewportSize();
