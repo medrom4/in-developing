@@ -10,23 +10,22 @@
 </head>
 
 <body>
-	<form name="shipping">
-		<fieldset>
-			<legend>Shipping Method</legend>
-			<label><input type="radio" name="method" value="1st">Первым классом</label>
-			<label><input type="radio" name="method" value="2day">За 2 дня самолетом</label>
-			<label><input type="radio" name="method" value="overnite">В течение ночи</label>
-		</fieldset>
-	</form>
-	<br />
 
-	<form onreset="return confirm('Вы действительно хотите сбросить все и начать сначала?')">
-		<button type="reset">Очистить поля ввода и начать сначала</ button>
-	</form>
+	<h1>Демонстрация использования каскадных таблиц стилей</h1>
+		<div class="WARNING">
+			<h2>Предупреждение</h2>
+				Это предупреждение! Обратите внимание, как оно привлекает внимание жирным шрифтом и яркими цветами. Также обратите внимание, что заголовок выровнен по центру и выделяется синим курсивом.
+		</div>
+		<p id="special">
+			Этот абзац выровнен по центру<br>
+				и выводится прописными буквами.<br>
+			<span style="text-transform: none">
+				Здесь мы явно используем встроенный стиль для переопределения прописных букв.
+			</span>
+		</p>
 
-
-	<!--    <script src="script_my/js-array.js"></script>-->
-	<script src="script_my/js-function.js"></script>
+		<!--    <script src="script_my/js-array.js"></script>-->
+		<script src="script_my/js-function.js"></script>
 </body>
 
 </html>

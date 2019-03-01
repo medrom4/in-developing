@@ -1,7 +1,31 @@
-* {
-	margin: 0;
-	padding: 0;
-	color: #000;
-	font-family: 'Roboto Condensed', sans-serif;
+h1,
+h2 {
+	color: blue;
+	font-style: italic
 }
 
+.WARNING {
+	font-weight: bold;
+	font-size: 150%;
+	margin: 0 1in 0 1in;
+	/* сверху
+справа,
+снизу
+слева
+*/
+	background-color: yellow;
+	border: solid red 8px;
+	padding: 10px;
+	/* 10 пикселов со всех 4 сторон */
+}
+
+.WARNING h1,
+.WARNING h2 {
+	text-align: center
+}
+
+
+#special {
+	text-align: center;
+	text-transform: uppercase;
+}
