@@ -1,22 +1,26 @@
-// меняет значение fontSize
-function scale(e, factor) {
-	var size = parseInt(window.getComputedStyle(e, "").fontSize);
-	e.style.fontSize = factor * sise + "px";
-}
+function addStyles(styles) {
+    var styleElt, styleSheet;
+    if (document.createStyleSheet) {
+        styleSheet = document.createStyleSheet();
+    } else {
+        var head = document.getElementsByTagName("head")[0]
+        styleElt = document.createElement("style");
+        head.appendChild(styleElt);
+        styleSheet = document.styleSheets[document.styleSheets.length - 1]
+    }
 
-// меняет значение цвета
-
-function scaleColor(e, factor) {
-	var color = window.getComputedStyle(e, "").backgroundColor;
-	var components = color.match(/[\d\.]+/g);
-	for (var i = 0; i < 3; i++) {
-		var x = Number(components[i]) * factor;
-		x = Math.round(Math.min(Math.max(x, 0), 255));
-		components[i] = String(x)
-	}
-
-	if (components.length == 3)
-		e.style.backgroundColor = "rgb(" + components.join() + ")";
-	else
-		e.style.backgroundColor = "rgba(" + components.join() + ")";
+    if (typeof styles === "string") {
+        if (styleElt) styleElt.innerHTML = styles;
+        else styleSheet.cssText = styles;
+    } else {
+        var i = 0;
+        for (selector in styles) {
+            if (styleSheet.insertRule) {
+                var rule = selector + " {" + styles[selector] + "}";
+                styleSheet.insertRule(rule, i++);
+            } else {
+                styleSheet.addRule(selector, styles[selector], i++);
+            }
+        }
+    }
 }
