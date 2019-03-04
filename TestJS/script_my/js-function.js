@@ -1,6 +1,9 @@
-// window.onload = function () {
-//     var elt = document.getElementById("shipping_addres");
-//     elt.onsubmit = function () {
-//         return validate(this);
-//     }
-// }
+var b = document.getElementById("mybutton");
+
+b.onclick = function() {
+    alert("Спасибо, я запомнил.");
+};
+
+b.addEventListener("click", function() {
+    alert("Ещё раз выскачило");
+}, false);
