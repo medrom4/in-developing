@@ -7,14 +7,21 @@
 	<title>JS</title>
 	<link rel="stylesheet" href="css/main.css">
 	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Roboto+Condensed" rel="stylesheet">
+
 </head>
 
 <body>
 
-	<img src="img/png123.png" onmousedown="if (event.shiftKey) drag(this, event);">
+	<img id="content" src="img/png123.png"">
 
-	<!--    <script src="script_my/js-array.js"></script>-->
-	<script src="script_my/js-function.js"></script>
+	<script src="script_my/enclose.js"></script>
+	<script src="script_my/whenReady.js"></script>
+
+	<script>
+		whenReady(function() {
+			enclose(document.getElementById("content"), 400, 200, -200, -300);
+		});
+	</script>
 </body>
 
 </html>
