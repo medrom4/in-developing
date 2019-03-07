@@ -1,21 +1,3 @@
-function showMessage() {
-    var a = {
-        "0": "a",
-        "1": "b",
-        "2": "c",
-        length: 3
-    };
-
-    var otvet1 = Array.prototype.join.call(a, "+");
-    var otvet2 = Array.prototype.slice.call(a, 0);
-    var otvet3 = Array.prototype.map.call(a, function(x){
-		return	x.toUpperCase();
-	});
-
-    console.log(otvet1 + '\n\n' + otvet2 + '\n\n' + otvet3);
-}
-
-showMessage();
 
 
 
