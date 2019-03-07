@@ -9,19 +9,20 @@
 	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Roboto+Condensed" rel="stylesheet">
 
 	<script src="script_my/whenReady.js"></script>
-	<script src="script_my/enclose.js"></script>
-
-	<script>
-		whenReady(function() {
-			enclose(document.getElementById("content"), 400, 200, -200, -300);
-		});
-	</script>
+	<script src="script_my/draggable.js"></script>
+	
+	<!--<script src="script_my/enclose.js"></script>-->
 
 </head>
 
 <body>
 
-	<img id="content" src="testimage.jpg">
+	<h1>Drag timestamps from the clock</h1>
+	<span id="clock"></span>
+	<!-- Здесь отображается время -->
+
+	<textarea cols=60 rows=20></textarea>
+	<!-- Сюда можно сбросить строку -->
 
 </body>
 
