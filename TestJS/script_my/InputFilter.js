@@ -31,5 +31,24 @@
                 return;
             var text = String.fromCharCode(code);
         }
+
+
+        var allowed = target.getAttribute("data-allowed-chars");
+        var messageid = target.getAttribute("data-messageid");
+        if ("messageid")
+            var messageElement = document.getElementById(messageid);
+
+        for (var i = 0; i < text.length; i++) {
+            var c = text.charAt(i);
+            if (allowed.indexOf(c) == -1) {
+                if (messageElement) messageElement.style.visibility = "visible";
+                if (e.preventDefault) e.preventDefault();
+                if (e.returnValue) e.returnValue = false;
+                return false;
+            }
+        }
+
+        if (messageElement) messageElement.style.visibility = "hidden";
+
     }
-});
+})();
