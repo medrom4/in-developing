@@ -15,7 +15,11 @@
 <body>
 
 	Zipcode: <input id="zip" type="text" data-allowed-chars="0123456789" data-messageid="zipwarn">
+	
 	<span id="zipwarn" style="color: red; visibility: hidden">Только цифры</span>
+	
+	SURNAME: <input type="text" oninput="this.value = this.value.toUpperCase();">
+
 
 	<script src="script_my/whenReady.js"></script>
 	<script src="script_my/draggable.js"></script>
