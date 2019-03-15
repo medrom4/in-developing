@@ -19,6 +19,7 @@ if (window.XMLHttpRequest === undefined) {
 }
 
 
+
 function postMessage(msg) {
     var request = new XMLHttpRequest();
     request.open("POST", "/log.php");
@@ -27,6 +28,7 @@ function postMessage(msg) {
 
     request.send(msg);
 }
+
 
 
 // Выполняет запрос HTTP GET содержимого указанного URL-адреса.
@@ -45,6 +47,7 @@ function getText(url, callback) {
     };
     request.send(null);
 }
+
 
 
 // Выполняет запрос HTTP GET на получение содержимого по указанному URL-адресу. 
@@ -69,6 +72,7 @@ function get(url, callback) {
 }
 
 
+
 /*
  * Представляет свойства объекта, как если бы они были парами имя/значение
  * HTML-формы, с использованием формата application/x-www-form-urlencoded
@@ -89,6 +93,7 @@ function encodeFormData(data) {
 }
 
 
+
 // Выполнение запроса HTTP POST с данными в формате JSON
 
 function get(url, data, callback) {
@@ -101,6 +106,7 @@ function get(url, data, callback) {
     request.setRequestHeader("Content-Type", "application/json");
     request.send(JSON.stringify(data));
 }
+
 
 
 // Выполнение запроса HTTP POST с XML-документом в качестве тела
@@ -126,6 +132,7 @@ function postQuery(url, what, where, radius, callback) {
 }
 
 
+
 // Выгрузка файла посредством запроса HTTP POST
 
 (function() {
@@ -146,3 +153,29 @@ function postQuery(url, what, where, radius, callback) {
         }, false);
     }
 })();
+
+
+
+
+// Отправка запроса с данными в формате multipart/form-data
+
+function postFormData(url, data, callback) {
+    if (typeof FormData === "undefined")
+        throw new Error("Объект FormData не реализован");
+
+    var request = new XMLHttpRequest();
+    request.open("POST", url);
+    request.onreadystatechange = function() {
+        if (request.readyState === 4 && callback)
+            callback(request);
+    };
+
+    var formdata = new FormData();
+    for (var name in data) {
+        if (!data.hasOwnProperty(name)) continue;
+        var value = data[name];
+        if (typeof value === "function") continue;
+        formdata.append(name, value);
+    }
+    request.send(formdata);
+};
