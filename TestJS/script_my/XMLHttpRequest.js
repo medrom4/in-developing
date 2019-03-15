@@ -177,5 +177,10 @@ function postFormData(url, data, callback) {
         if (typeof value === "function") continue;
         formdata.append(name, value);
     }
+
+    request.onprogress = function(e) {
+        if (e.lengthComputable)
+            progress.innerHTML = Math.round(100 * e.loaded / e.total) + "% Выполнено";
+    }
     request.send(formdata);
 };
