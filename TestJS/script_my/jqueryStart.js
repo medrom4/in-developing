@@ -10,7 +10,7 @@
 
 (function() {
     $("div").each(function(idx) {
-        $(this).prepend(idx + ": ");
+        $(this).prepend("Номер " + idx + ": ");
         if (this.id === "last") return false;
     });
 })();
