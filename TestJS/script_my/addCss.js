@@ -1,0 +1,3 @@
+(function() {
+    $("div").addClass("hilite");
+})();
