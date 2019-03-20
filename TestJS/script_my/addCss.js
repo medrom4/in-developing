@@ -23,8 +23,13 @@
     var elt = $(".clicktohide");
     var position = elt.offset();
 
-    position.top += 250;
+    position.top += 350;
     elt.offset(position);
+
+    $("h1").prepend("§ много пробелов § ");
+    $("h1").before("<hr/>");
+    $("h1").after("<hr/>");
+
 
     $("h1").offset(function(index, curpos) {
         return {
@@ -37,6 +42,22 @@
 
 (function() {
     var classSelP = $(".classP").data("x", 1);
-    
+
     console.log(classSelP);
+})();
+
+
+(function() {
+    $(document.body).append("<div id='linklist'><h1>List of Links</h1></div>");
+
+    $("a").clone().appendTo("#linklist");
+
+    $("#linklist > a").after("<br />");
+
+})();
+
+
+
+(function() {
+    $("h1").wrap(document.createElement("i"));
 })();
