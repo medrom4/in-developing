@@ -12,6 +12,24 @@
     });
 })();
 
+(function() {
+    // Удалить все обработчики событий mouseover и mouseout во всех элементах <a>
+    $('a').unbind("mouseover mouseout");
+})();
 
-// Удалить все обработчики событий mouseover и mouseout во всех элементах <a>
-$('a').unbind("mouseover mouseout");
+
+
+(function() {
+    $("#imgTop").click(function() {
+        $.event.trigger("logoff");
+        window.location = "logoff.php";
+    });
+})();
+
+
+
+
+
+
+// bind()
+// rigger()
