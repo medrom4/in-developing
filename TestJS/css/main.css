@@ -5,3 +5,11 @@ div {
 .hilite {
     color: blue;
 }
+
+#imgTop {
+    display: none;
+}
+
+#message {
+    border-width: 2px;
+}
