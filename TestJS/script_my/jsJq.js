@@ -89,10 +89,3 @@ $("#message").fadeIn().delay(200).queue(function(next) {
         //  
         // 
         // 
-        // 
-        // 
-        // 
-        // 
-        // 
-        // 
-        //
